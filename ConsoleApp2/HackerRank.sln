@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrayManipulation", "Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecialStringAgain", "SpecialStringAgain\SpecialStringAgain.csproj", "{FBBCB918-E6CE-453B-9AE5-CE824E34996C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics", "Statistics\Statistics.csproj", "{2FBDE774-FEFA-4DE4-8F56-F0DD45225B16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FBBCB918-E6CE-453B-9AE5-CE824E34996C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBBCB918-E6CE-453B-9AE5-CE824E34996C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBBCB918-E6CE-453B-9AE5-CE824E34996C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBDE774-FEFA-4DE4-8F56-F0DD45225B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBDE774-FEFA-4DE4-8F56-F0DD45225B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBDE774-FEFA-4DE4-8F56-F0DD45225B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBDE774-FEFA-4DE4-8F56-F0DD45225B16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
