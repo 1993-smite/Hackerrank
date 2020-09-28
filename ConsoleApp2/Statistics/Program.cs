@@ -7,7 +7,7 @@ namespace Statistics
     {
         static void Main(string[] args)
         {
-            string w = "1 2 3 4 5";
+            string w = "5 4 3 2 1 5";
             string[] wArr = w.Split(" "); 
 
             string str = "10 40 30 50 20";
@@ -25,9 +25,9 @@ namespace Statistics
                 
 
 
-            var stat = new WeightedMean(wLong,arrLong);
+            var stat = new RangeStats(arrLong);
 
-            Console.WriteLine(string.Format("{0:0.0}", stat.Mean));
+            Console.WriteLine("{0:0.0}",stat.QDx);
 
             Console.ReadLine();
             //Console.WriteLine("Hello World!");

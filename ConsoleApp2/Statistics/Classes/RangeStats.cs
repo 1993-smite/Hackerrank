@@ -46,6 +46,9 @@ namespace Statistics.Classes
         public long Mode { private set; get; }
         public double Median { private set; get; }
 
+        public double Dx { private set; get; } = 0;
+        public double QDx { private set; get; }
+
         public RangeStats(long[] range)
         {
             _range = range;
@@ -93,6 +96,12 @@ namespace Statistics.Classes
             Mean = mx / _range.Length;
             Median = (sl[_range.Length / 2 - 1] + sl[_range.Length / 2]) / 2;
             Mode = minRepeat;
+
+            foreach (var el in _range)
+                Dx += Math.Pow(el - Mean, 2);
+
+            Dx /= _range.Length;
+            QDx = Math.Sqrt(Dx);
 
         }
 
