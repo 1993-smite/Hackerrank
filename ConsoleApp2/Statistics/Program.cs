@@ -22,13 +22,24 @@ namespace Statistics
                 arrLong[i] = long.Parse(arr[i]);
                 wLong[i] = long.Parse(wArr[i]);
             }
+
+
+
+            //var stat = new RangeStats(arrLong);
+
+            //Console.WriteLine("{0:0.0}",stat.QDx);
+
+            double p = 1.0 / 3;
+
+            double res1 = 0;
+                
+            for (int i=1;i < 6; i++)
+            {
+                res1 += Geometric.P(i,p);
+            }
                 
 
-
-            var stat = new RangeStats(arrLong);
-
-            Console.WriteLine("{0:0.0}",stat.QDx);
-
+            Console.WriteLine("{0:0.000}",res1);
             Console.ReadLine();
             //Console.WriteLine("Hello World!");
         }
