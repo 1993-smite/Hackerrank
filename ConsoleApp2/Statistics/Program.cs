@@ -29,17 +29,22 @@ namespace Statistics
 
             //Console.WriteLine("{0:0.0}",stat.QDx);
 
-            double p = 1.0 / 3;
+            double ma = 0.88;
+            double mb = 1.55;
 
-            double res1 = 0;
-                
-            for (int i=1;i < 6; i++)
-            {
-                res1 += Geometric.P(i,p);
-            }
-                
+            double costA = 160 + 40 * (ma + Math.Pow(ma, 2));
+            double costB = 128 + 40 * (mb + Math.Pow(mb, 2));
 
-            Console.WriteLine("{0:0.000}",res1);
+            double mx = 20;
+            double q = 2;
+
+            var normal = new Normal(20, 2);
+
+            Console.WriteLine("{0:0.000}", Normal.Ro(19.5, mx, q));
+            Console.WriteLine("{0:0.000}", Normal.Ro(22, mx, q)- Normal.Ro(20, mx, q));
+            Console.WriteLine("{0:0.000}", Math.Round((normal.Ferfx(19.5))*100,2));
+            Console.WriteLine("{0:0.000}", normal.Ferfx(22) - normal.Ferfx(20));
+            Console.WriteLine("{0:0.000}", costB);
             Console.ReadLine();
             //Console.WriteLine("Hello World!");
         }
