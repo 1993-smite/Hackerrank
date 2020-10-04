@@ -24,6 +24,10 @@ namespace Statistics.Classes
             
         }
 
+        public int GetIndex(double item) {
+            return List.FindIndex(x=>x == item);
+        }
+
         public double this[int index]
         {
             get
@@ -40,16 +44,17 @@ namespace Statistics.Classes
 
     public class RangeStats
     {
-        private long[] _range;
+        private double[] _range;
+        private SortedList _sortedRange;
 
         public double Mean { private set; get;}
-        public long Mode { private set; get; }
+        public double Mode { private set; get; }
         public double Median { private set; get; }
 
         public double Dx { private set; get; } = 0;
         public double QDx { private set; get; }
 
-        public RangeStats(long[] range)
+        public RangeStats(double[] range)
         {
             _range = range;
             Prepare();
@@ -57,14 +62,14 @@ namespace Statistics.Classes
 
         private void Prepare()
         {
-            Dictionary<long, long> repeat = new Dictionary<long, long>();
+            Dictionary<double, long> repeat = new Dictionary<double, long>();
             long countRepeat = 0;
-            long minRepeat = long.MaxValue;
+            double minRepeat = long.MaxValue;
 
             double mx = 0;
 
 
-            var sl = new SortedList();
+            _sortedRange = new SortedList();
 
             foreach (var item in _range)
             {
@@ -88,13 +93,13 @@ namespace Statistics.Classes
                     countRepeat = repeat[item];
                 }
 
-                sl.Add(item);
+                _sortedRange.Add(item);
 
                 mx += item;
             }
 
             Mean = mx / _range.Length;
-            Median = (sl[_range.Length / 2 - 1] + sl[_range.Length / 2]) / 2;
+            Median = (_sortedRange[_range.Length / 2 - 1] + _sortedRange[_range.Length / 2]) / 2;
             Mode = minRepeat;
 
             foreach (var el in _range)
@@ -105,5 +110,35 @@ namespace Statistics.Classes
 
         }
 
+        public double Correlate(RangeStats range)
+        {
+            double r = 0;
+            for(int i=0; i < _range.Length; i++)
+            {
+                r += (_range[i] - Mean) * (range._range[i] - range.Mean);
+            }
+
+            r /= (_range.Length * QDx * range.QDx);
+
+            return r;
+        }
+
+        public double SpearmansRankCorrelation(RangeStats range)
+        {
+            double res = 0;
+
+            long n = _range.Length;
+
+            for (int i = 0; i < n; i++)
+            {
+                int _r = _sortedRange.GetIndex(_range[i]);
+                int r = range._sortedRange.GetIndex(range._range[i]);
+                res += Math.Pow(_r - r, 2);
+            }
+
+
+
+            return 1 - ((6 * res) / (n * (Math.Pow(n,2) - 1)));
+        }
     }
 }

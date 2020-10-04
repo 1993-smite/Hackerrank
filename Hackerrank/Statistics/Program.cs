@@ -28,23 +28,18 @@ namespace Statistics
             //var stat = new RangeStats(arrLong);
 
             //Console.WriteLine("{0:0.0}",stat.QDx);
+            string rr = "10 9.8 8 7.8 7.7 1.7 6 5 1.4 2";
+            string rr1 = "200 44 32 24 22 17 15 12 8 4";
 
-            double ma = 0.88;
-            double mb = 1.55;
+            var arr1 = rr.Split(' ');
 
-            double costA = 160 + 40 * (ma + Math.Pow(ma, 2));
-            double costB = 128 + 40 * (mb + Math.Pow(mb, 2));
+            double[] r1 = Array.ConvertAll(rr.Split(' '), x => double.Parse(x.Replace('.',',')));
+            double[] r2 = Array.ConvertAll(rr1.Split(' '), x => double.Parse(x));
 
-            double mx = 20;
-            double q = 2;
+            var range = new RangeStats(r1);
+            var range1 = new RangeStats(r2);
 
-            var normal = new Normal(20, 2);
-
-            Console.WriteLine("{0:0.000}", Normal.Ro(19.5, mx, q));
-            Console.WriteLine("{0:0.000}", Normal.Ro(22, mx, q)- Normal.Ro(20, mx, q));
-            Console.WriteLine("{0:0.000}", Math.Round((normal.Ferfx(19.5))*100,2));
-            Console.WriteLine("{0:0.000}", normal.Ferfx(22) - normal.Ferfx(20));
-            Console.WriteLine("{0:0.000}", costB);
+            Console.WriteLine("{0:0.000}", range.SpearmansRankCorrelation(range1));
             Console.ReadLine();
             //Console.WriteLine("Hello World!");
         }
