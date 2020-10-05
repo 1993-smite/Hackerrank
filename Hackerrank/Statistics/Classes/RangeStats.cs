@@ -140,5 +140,24 @@ namespace Statistics.Classes
 
             return 1 - ((6 * res) / (n * (Math.Pow(n,2) - 1)));
         }
+
+        public double CorrelatePirson(RangeStats range)
+        {
+            double r = 0;
+            double sx = 0;
+            double sy = 0;
+            for (int i = 0; i < _range.Length; i++)
+            {
+                var dx = _range[i] - Mean;
+                var dy = range._range[i] - range.Mean;
+                r += dx * dy;
+                sx += dx * dx;
+                sy += dy * dy;
+            }
+
+            r /= (Math.Sqrt(sx * sy));
+
+            return r;
+        }
     }
 }

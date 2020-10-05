@@ -1,5 +1,7 @@
 ﻿using Statistics.Classes;
+using Statistics.Classes.MNK;
 using System;
+using System.Collections.Generic;
 
 namespace Statistics
 {
@@ -24,22 +26,22 @@ namespace Statistics
             }
 
 
+            List<double> x = new List<double>();
+            List<double> y = new List<double>();
 
-            //var stat = new RangeStats(arrLong);
+            List<double> y1 = new List<double>();
 
-            //Console.WriteLine("{0:0.0}",stat.QDx);
-            string rr = "10 9.8 8 7.8 7.7 1.7 6 5 1.4 2";
-            string rr1 = "200 44 32 24 22 17 15 12 8 4";
+            for (int i = 1; i < 10; i++)
+            {
+                x.Add(i);
+                y.Add( (8 + 3 * i) / (-4));
+                y1.Add((7 + 4 * i) / (-3));
+            }
 
-            var arr1 = rr.Split(' ');
+            var r1 = new RangeStats(y.ToArray());
+            var r2 = new RangeStats(y1.ToArray());
 
-            double[] r1 = Array.ConvertAll(rr.Split(' '), x => double.Parse(x.Replace('.',',')));
-            double[] r2 = Array.ConvertAll(rr1.Split(' '), x => double.Parse(x));
-
-            var range = new RangeStats(r1);
-            var range1 = new RangeStats(r2);
-
-            Console.WriteLine("{0:0.000}", range.SpearmansRankCorrelation(range1));
+            Console.WriteLine("{0:0.000}", r1.CorrelatePirson(r2));
             Console.ReadLine();
             //Console.WriteLine("Hello World!");
         }
