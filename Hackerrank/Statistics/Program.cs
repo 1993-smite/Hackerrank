@@ -9,39 +9,60 @@ namespace Statistics
     {
         static void Main(string[] args)
         {
-            string w = "5 4 3 2 1 5";
-            string[] wArr = w.Split(" "); 
+            string input = "0.18 0.89 109.85;" +
+                "1.0 0.26 155.72;" +
+                "0.92 0.11 137.66;" +
+                "0.07 0.37 76.17;" +
+                "0.85 0.16 139.75;" +
+                "0.99 0.41 162.6;" +
+                "0.87 0.47 151.77";
 
-            string str = "10 40 30 50 20";
-                //"64630 11735 14216 99233 14470 4978 73429 38120 51135 67060";
-            string[] arr = str.Split(" ");
-            long[] arrLong = new long[arr.Length];
 
-            long[] wLong = new long[arr.Length];
 
-            for (int i = 0; i < arr.Length; i++)
+            int count = 7;
+
+            decimal[][] x = new decimal[count][];
+            decimal[][] y = new decimal[count][];
+
+            string[] arr = input.Split(';');
+
+            for (int i = 0; i < count; i++)
             {
-                arrLong[i] = long.Parse(arr[i]);
-                wLong[i] = long.Parse(wArr[i]);
+                x[i] = new decimal[3];
+                y[i] = new decimal[1];
+                var line = arr[i].Replace('.', ',').Split(' ');
+                x[i][0] = 1;
+                x[i][1] = decimal.Parse(line[0]);
+                x[i][2] = decimal.Parse(line[1]);
+                y[i][0] = decimal.Parse(line[2]);
+            }
+
+            /* Calculate B */
+            decimal[][] xt = Matrix.transpose(x);
+            decimal[][] xtx = Matrix.multiply(xt, x);
+            decimal[][] xtxInv = Matrix.invert(xtx);
+            decimal[][] xty = Matrix.multiply(xt, y);
+            decimal[][] B = Matrix.multiply(xtxInv, xty);
+
+            string str = "0.49 0.18;" +
+                "0.57 0.83;" +
+                "0.56 0.64;" +
+                "0.76 0.18";
+
+            var fff = str.Split(';');
+            for (int i = 0; i < fff.Length; i++)
+            {
+                var line = arr[i].Replace('.', ',').Split(' ');
+                decimal b1 = decimal.Parse(line[0]);
+                decimal b2 = decimal.Parse(line[1]);
+
+
+                var res = B[0][0] + B[1][0] * b1 + B[2][0] * b2;
+                Console.WriteLine(res);
             }
 
 
-            List<double> x = new List<double>();
-            List<double> y = new List<double>();
-
-            List<double> y1 = new List<double>();
-
-            for (int i = 1; i < 10; i++)
-            {
-                x.Add(i);
-                y.Add( (8 + 3 * i) / (-4));
-                y1.Add((7 + 4 * i) / (-3));
-            }
-
-            var r1 = new RangeStats(y.ToArray());
-            var r2 = new RangeStats(y1.ToArray());
-
-            Console.WriteLine("{0:0.000}", r1.CorrelatePirson(r2));
+            //Console.WriteLine("{0:0.000}", );
             Console.ReadLine();
             //Console.WriteLine("Hello World!");
         }
