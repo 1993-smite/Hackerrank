@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrayManipulation", "arrayManipulation\arrayManipulation.csproj", "{E221166A-1D79-4306-849B-D92504578246}"
 EndProject
@@ -50,6 +50,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillDivision", "BillDivision\BillDivision.csproj", "{3B001E27-FCFA-42CB-BCB4-52200CFEB928}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatsAndMouse", "CatsAndMouse\CatsAndMouse.csproj", "{DF5693F1-2074-443A-A4CC-4447ACC38FE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{7029032B-A8FF-4BDC-9F21-A4D2CF7EA79A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertNodeInLinkedList", "InsertNodeInLinkedList\InsertNodeInLinkedList.csproj", "{FADCAE65-4EBF-4D0E-9EBE-CAAC38B6F56F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertingNodeToSortedDoublyLinkedList", "InsertingNodeToSortedDoublyLinkedList\InsertingNodeToSortedDoublyLinkedList.csproj", "{4BCFE796-E2B4-4F50-B9A3-30DFB1B59772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseDoublyLinkedList", "ReverseDoublyLinkedList\ReverseDoublyLinkedList.csproj", "{5698AE7E-A432-44D8-9244-1366C4B9A945}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +161,22 @@ Global
 		{DF5693F1-2074-443A-A4CC-4447ACC38FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF5693F1-2074-443A-A4CC-4447ACC38FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF5693F1-2074-443A-A4CC-4447ACC38FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7029032B-A8FF-4BDC-9F21-A4D2CF7EA79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7029032B-A8FF-4BDC-9F21-A4D2CF7EA79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7029032B-A8FF-4BDC-9F21-A4D2CF7EA79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7029032B-A8FF-4BDC-9F21-A4D2CF7EA79A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FADCAE65-4EBF-4D0E-9EBE-CAAC38B6F56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FADCAE65-4EBF-4D0E-9EBE-CAAC38B6F56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FADCAE65-4EBF-4D0E-9EBE-CAAC38B6F56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FADCAE65-4EBF-4D0E-9EBE-CAAC38B6F56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BCFE796-E2B4-4F50-B9A3-30DFB1B59772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BCFE796-E2B4-4F50-B9A3-30DFB1B59772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BCFE796-E2B4-4F50-B9A3-30DFB1B59772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BCFE796-E2B4-4F50-B9A3-30DFB1B59772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5698AE7E-A432-44D8-9244-1366C4B9A945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5698AE7E-A432-44D8-9244-1366C4B9A945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5698AE7E-A432-44D8-9244-1366C4B9A945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5698AE7E-A432-44D8-9244-1366C4B9A945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

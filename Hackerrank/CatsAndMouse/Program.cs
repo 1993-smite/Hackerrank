@@ -8,6 +8,19 @@ namespace CatsAndMouse
 {
     class Program
     {
+        public static long taskOfPairing(List<long> freq)
+        {
+            long count = 0;
+            long df = 0;
+            for (int i = 0; i < freq.Count; i++)
+            {
+                count += (freq[i] + df) / 2;
+                df = freq[i] % 2;
+            }
+
+            return count;
+        }
+
         // Complete the catAndMouse function below.
         static string catAndMouse(int x, int y, int z)
         {
