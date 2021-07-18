@@ -75,7 +75,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringSum", "StringSum\Stri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Delegates.csproj", "{F3835CD7-C5C2-402B-8437-E6259CA74B67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumbers", "RomanNumbers\RomanNumbers.csproj", "{E576AF49-1D32-4DC3-A91E-F751D8D124F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RomanNumbers", "RomanNumbers\RomanNumbers.csproj", "{E576AF49-1D32-4DC3-A91E-F751D8D124F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boggle", "Boggle\Boggle.csproj", "{0C4D838A-87E1-488A-B098-BDBBBAAC3720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,10 @@ Global
 		{E576AF49-1D32-4DC3-A91E-F751D8D124F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E576AF49-1D32-4DC3-A91E-F751D8D124F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E576AF49-1D32-4DC3-A91E-F751D8D124F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4D838A-87E1-488A-B098-BDBBBAAC3720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4D838A-87E1-488A-B098-BDBBBAAC3720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4D838A-87E1-488A-B098-BDBBBAAC3720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4D838A-87E1-488A-B098-BDBBBAAC3720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
